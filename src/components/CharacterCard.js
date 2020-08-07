@@ -1,14 +1,12 @@
 import React from 'react';
-import '../stylesheets/App.css';
-import Logo from '../images/logo.png';
 
-// function App() {
-//   return (
-//     <div className='App'>
-//       <p>Vamos Rafa!</p>
-//       <img src={Logo}></img>
-//     </div>
-//   );
-// }
+<li className='characters'>
+  <img src=''></img>
 
-export default App;
+  <div className='character__card'>
+    <h2 className='characters__name'></h2>
+    <p className='chacter__specie'></p>
+  </div>
+</li>;
+
+export default CharacterCard;
