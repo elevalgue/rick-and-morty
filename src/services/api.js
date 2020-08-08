@@ -6,7 +6,7 @@ const getDataFromApi = () => {
         return {
           id: character.id,
           name: character.name,
-          status: character.species,
+          status: character.status,
           specie: character.species,
           image: character.image,
         };
@@ -15,3 +15,5 @@ const getDataFromApi = () => {
 };
 
 export default getDataFromApi;
+
+//Limpio aquí los datos
