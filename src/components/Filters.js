@@ -2,24 +2,25 @@ import React from 'react';
 
 const Filters = (props) => {
   const handleFilterName = (event) => {
-    event.preventDefault();
-
-    props.handleFilterName({
-      key: event.currentTarget.id,
+    const data = {
+      key: 'name',
       value: event.currentTarget.value,
-    });
+
+      // es un objeto con dos valores
+    };
+    props.handleFilterName(data);
   };
 
   return (
     <>
       <form>
-        <label htmlFor='search-input'>
+        <label htmlFor='name'>
           Busca un personaje:
           <input
             type='text'
-            id='filterName'
+            id='name'
             name='name'
-            placeholder='Rick'
+            placeholder='Morty'
             value={props.filterName}
             onChange={handleFilterName}
           />
@@ -30,3 +31,5 @@ const Filters = (props) => {
 };
 
 export default Filters;
+
+//Estoy enviando datos desde Filters a App por lifting

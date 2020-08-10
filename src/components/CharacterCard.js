@@ -1,18 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CharacterCard = (props) => {
-  console.log(props.CharacterCard);
-
-  const { name, image, species } = props; //NECESITO ID AQUÍ?
-
   return (
-    <li className='characters'>
-      <img src={image} alt={name}></img>
-      <div className='character__card'>
-        <h2 className='characters__name'>{name}</h2>
-        <p className='chacter__specie'>{species}</p>
-      </div>
-    </li>
+    <Link to={`/character__detail/${props.id}`} className='character__link'>
+      <li className='characters' key={props.id}>
+        <img src={props.image} alt={props.name} />
+        <div className='characters__card'>
+          <h2 className='characters__name'>{props.name}</h2>
+          <p className='characters__specie'>{props.specie}</p>
+        </div>
+      </li>
+    </Link>
   );
 };
+
 export default CharacterCard;

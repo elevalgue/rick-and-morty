@@ -4,15 +4,16 @@ import CharacterCard from './CharacterCard';
 //CharacterList pinta un listado
 
 const CharacterList = (props) => {
-  const characterItem = props.characters.map((character) => {
+  const propsCharacters = props.characters;
+  const characterItem = propsCharacters.map((character) => {
     return (
       <CharacterCard
-        key={character.id}
+        key={character.key}
         id={character.id}
         name={character.name}
         status={character.status}
-        specie={character.species}
-        imageURL={character.imageURL}
+        specie={character.specie}
+        image={character.image}
       />
     );
   });
