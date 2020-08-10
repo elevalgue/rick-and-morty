@@ -9,6 +9,9 @@ const getDataFromApi = () => {
           status: character.status,
           specie: character.species,
           image: character.image,
+          origin: character.origin.name,
+          // location: character.location.name,
+          episode: character.episode.length,
         };
       });
     });

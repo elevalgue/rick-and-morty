@@ -29,6 +29,15 @@ a:link {
 .character__detail__link {
   color: white;
 }
+.button_back {
+  margin-bottom: 15px;
+}
+
+.details {
+  list-style-type: none;
+  margin-bottom: 10px;
+  height: 26.25px;
+}
 
 .character__list {
   text-align: center;
@@ -45,8 +54,15 @@ a:link {
   list-style: none;
 }
 
-.character__detail__wrap {
-  padding-top: 15px;
+.character__detail__wrapper {
+  border: 4px solid #9cc949;
+  width: 600px;
+  margin: auto;
+  background-color: #04bcd3;
+  border-radius: 15px;
+}
+.image__character {
+  margin-top: 15px;
 }
 
 input {
@@ -59,4 +75,13 @@ input {
 
 .characterNotFound {
   color: white;
+}
+
+.character__detail {
+  color: white;
+  list-style: none;
+}
+
+.input-form {
+  margin-left: 12px;
 }

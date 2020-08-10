@@ -17,6 +17,7 @@ const Filters = (props) => {
         <label htmlFor='name'>
           Busca un personaje:
           <input
+            className='input-form'
             type='text'
             id='name'
             name='name'

@@ -13,8 +13,31 @@ const App = () => {
   // const [filterSpecies, setFIlterSpecies] = useState('all');
 
   useEffect(() => {
-    getDataFromApi().then((data) => setCharacters(data));
-  }, []);
+    getDataFromApi().then((character) => {
+      const orderedObject = character.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        } else if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      });
+      setCharacters(orderedObject);
+    });
+  });
+  // useEffect(() => {
+  //   getDataFromApi().then((data) => {
+  //     const orderedObject = character.sort((a, b) => {
+  //       if (a.name > b.name) {
+  //         return 1;
+  //       } else if (a.name < b.name) {
+  //         return -1;
+  //       }
+  //       return 0;
+  //     });
+  //     setCharacters(orderedObject)
+  //   }
+  //   )};
 
   useEffect(() => {
     localStorage.setItem('filterName', JSON.stringify(filterName));
@@ -41,7 +64,7 @@ const App = () => {
     );
   };
 
-  //router
+  //route
 
   const renderCharacterDetail = (props) => {
     const characterId = parseInt(props.match.params.id);
@@ -51,7 +74,7 @@ const App = () => {
     if (foundCharacter === undefined) {
       return <p className='characterNotFound'>Personaje no encontrado</p>;
     } else {
-      return <CharacterDetail></CharacterDetail>;
+      return <CharacterDetail character={foundCharacter}></CharacterDetail>;
     }
   };
 
