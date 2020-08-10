@@ -5,7 +5,7 @@ import '../stylesheets/App.css';
 
 const CharacterDetail = (props) => {
   console.log(props);
-  const { image, name, status, species, origin, episode, id } = props.character;
+  const { image, name, status, species, origin, episode } = props.character;
 
   return (
     <div className='character__detail'>

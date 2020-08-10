@@ -10,7 +10,6 @@ const getDataFromApi = () => {
           specie: character.species,
           image: character.image,
           origin: character.origin.name,
-          // location: character.location.name,
           episode: character.episode.length,
         };
       });
@@ -18,5 +17,3 @@ const getDataFromApi = () => {
 };
 
 export default getDataFromApi;
-
-//Limpio aquí los datos

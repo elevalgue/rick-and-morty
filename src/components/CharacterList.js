@@ -1,8 +1,6 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 
-//CharacterList pinta un listado
-
 const CharacterList = (props) => {
   const propsCharacters = props.characters;
   const characterItem = propsCharacters.map((character) => {

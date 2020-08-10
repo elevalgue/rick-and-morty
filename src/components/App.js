@@ -10,7 +10,6 @@ import CharacterDetail from './CharacterDetail';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
-  // const [filterSpecies, setFIlterSpecies] = useState('all');
 
   useEffect(() => {
     getDataFromApi().then((character) => {
@@ -25,19 +24,6 @@ const App = () => {
       setCharacters(orderedObject);
     });
   });
-  // useEffect(() => {
-  //   getDataFromApi().then((data) => {
-  //     const orderedObject = character.sort((a, b) => {
-  //       if (a.name > b.name) {
-  //         return 1;
-  //       } else if (a.name < b.name) {
-  //         return -1;
-  //       }
-  //       return 0;
-  //     });
-  //     setCharacters(orderedObject)
-  //   }
-  //   )};
 
   useEffect(() => {
     localStorage.setItem('filterName', JSON.stringify(filterName));
@@ -50,21 +36,11 @@ const App = () => {
     }
   };
 
-  //función para ordenar los personajes alfabeticamente
-  // const sortNames = characters.sort((a, b) => {
-  //   if (a.name < b.name) return 1;
-  //   if (a.name > b.name) return -1;
-  //   return 0;
-  // });
-
-  //por qué renderFilteredCharacters es undefined?
   const renderFilteredCharacters = () => {
     return characters.filter((character) =>
       character.name.toUpperCase().includes(filterName.toUpperCase())
     );
   };
-
-  //route
 
   const renderCharacterDetail = (props) => {
     const characterId = parseInt(props.match.params.id);
@@ -87,15 +63,12 @@ const App = () => {
             filterName={filterName}
             handleFilterName={handleFilterName}
           />
-          <CharacterList
-            characters={renderFilteredCharacters()}
-            // sort={sortNames}
-          />
+          <CharacterList characters={renderFilteredCharacters()} />
         </Route>
         <Route path='/character/:id' render={renderCharacterDetail} />
       </Switch>
     </div>
   );
 };
-// };
+
 export default App;

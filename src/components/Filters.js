@@ -5,8 +5,6 @@ const Filters = (props) => {
     const data = {
       key: 'name',
       value: event.currentTarget.value,
-
-      // es un objeto con dos valores
     };
     props.handleFilterName(data);
   };
@@ -32,5 +30,3 @@ const Filters = (props) => {
 };
 
 export default Filters;
-
-//Estoy enviando datos desde Filters a App por lifting
