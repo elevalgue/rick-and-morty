@@ -6,7 +6,8 @@ const CharacterList = (props) => {
   const characterItem = propsCharacters.map((character) => {
     return (
       <CharacterCard
-        key={character.key}
+        //corrección valor key
+        key={character.id}
         id={character.id}
         name={character.name}
         status={character.status}

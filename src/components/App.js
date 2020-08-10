@@ -23,11 +23,9 @@ const App = () => {
       });
       setCharacters(orderedObject);
     });
-  });
+  }, []);
 
-  useEffect(() => {
-    localStorage.setItem('filterName', JSON.stringify(filterName));
-  }, [filterName]);
+  //eliminado el bucle infinito con los corchetes
 
   // event handlers
   const handleFilterName = (data) => {
@@ -35,6 +33,8 @@ const App = () => {
       setFilterName(data.value);
     }
   };
+
+  //eliminado el localStorage porque en este tipo de app no es útil
 
   const renderFilteredCharacters = () => {
     return characters.filter((character) =>

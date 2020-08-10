@@ -4,9 +4,19 @@ import PropTypes from 'prop-types';
 import '../stylesheets/App.css';
 
 const CharacterDetail = (props) => {
-  console.log(props);
-  const { image, name, status, species, origin, episode } = props.character;
+  //modificación prop specie
+  const { image, name, status, specie, origin, episode } = props.character;
 
+  //mejora en el pintado del status
+  function renderStatus() {
+    if (status !== 'unknown') {
+      const aliveOrDead =
+        `${status}` === 'Dead' ? `${status} 💀` : `${status} ❤️`;
+      return aliveOrDead;
+    } else {
+      return 'unknown';
+    }
+  }
   return (
     <div className='character__detail'>
       <Link to='/' className='character__detail__link'>
@@ -19,11 +29,11 @@ const CharacterDetail = (props) => {
         <ul className='character__detail_info'>
           <h2 className='character__detail__name'>{name}</h2>
           <li className='details character__detail__status'>
-            Status: {`${status}` === 'Dead' ? `${status} 💀` : `${status} ❤️`}
+            Status: {renderStatus()}
           </li>
           <li className='details character__detail__species'>
             Specie: {''}
-            {`${species}` === 'Alien' ? `${species} 👽` : `${species} 😎`}
+            {`${specie}` === 'Alien' ? `${specie} 👽` : `${specie} 😎`}
           </li>
           <li className='details character__detail__origin'>
             {' '}
