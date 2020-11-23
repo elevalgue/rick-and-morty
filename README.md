@@ -1,6 +1,4 @@
-Rick & Morty Character finder build with REACT
-
-![Buscardor de personajes de Rick and Morty]
+__Rick & Morty Character finder build with REACT__
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
