@@ -4,7 +4,6 @@ const Filters = (props) => {
   //por lifting paso esta info al componente principal
   const handleFilterName = (event) => {
     const data = {
-      //en un solo objeto envío estas dos informaciones
       key: 'name',
       value: event.currentTarget.value,
     };
@@ -13,7 +12,6 @@ const Filters = (props) => {
 
   const handleFilterLocation = (event) => {
     const data = {
-      //en un solo objeto envío estas dos informaciones
       key: 'location',
       value: event.currentTarget.value,
     };
@@ -33,7 +31,7 @@ const Filters = (props) => {
             name='name'
             placeholder='Morty'
             value={props.filterName}
-            onChange={handleFilterName} //escucho el evento en onChange (función sin ejecutar)
+            onChange={handleFilterName}
           />
         </label>
       </form>
