@@ -29,9 +29,8 @@ const App = () => {
     });
   }, []);
 
-  //quiero que se ejecute una sola vez eliminado el bucle infinito con los corchetes
-
-  // event handlers //escucho el evento del campo de texto
+  // event handlers 
+  //escucho el evento del campo de texto
   const handleFilterName = (data) => {
     if (data.key === 'name') {
       setFilterName(data.value);
@@ -43,8 +42,6 @@ const App = () => {
       setFilterLocation(data.value);
     }
   };
-
-  //eliminado el localStorage porque en este tipo de app no es útil
 
   const renderFilteredCharacters = () => {
     return characters
